@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 
 import { PrintButton } from '@/components/print-button';
-import { certifications, education, experience, expertise } from '@/lib/data';
+import { certifications, educationJourney, experience, expertise } from '@/lib/data';
 import { site } from '@/lib/site';
 
 export const metadata: Metadata = {
@@ -74,13 +74,21 @@ export default function CvPage() {
 
         <section className="cv__section">
           <h2>Education</h2>
-          <article className="cv__entry">
-            <div className="cv__entry-head">
-              <h3>{education.degree}</h3>
-            </div>
-            <p className="cv__company">{education.institution}</p>
-            <p className="cv__areas">CGPA {education.cgpa}</p>
-          </article>
+          {educationJourney.map((entry) => (
+            <article className="cv__entry" key={entry.id}>
+              <div className="cv__entry-head">
+                <h3>
+                  {entry.qualification} — {entry.institution}
+                </h3>
+                <p className="label label--muted">{entry.period}</p>
+              </div>
+              <p className="cv__company">
+                {entry.level} · {entry.field}
+                {entry.note ? ` · ${entry.note}` : ''}
+              </p>
+              {entry.result && <p className="cv__areas">{entry.result}</p>}
+            </article>
+          ))}
         </section>
 
         <section className="cv__section">

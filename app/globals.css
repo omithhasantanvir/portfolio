@@ -1242,11 +1242,106 @@ main[id] {
   grid-template-columns: 1.35fr 0.65fr;
   gap: clamp(20px, 3vw, 40px);
   align-items: start;
+  margin-top: clamp(20px, 3vw, 32px);
 }
 
 .credentials__main {
   display: grid;
   gap: 14px;
+}
+
+/* Education timeline cards (reuse the vertical .timeline rail) ------------- */
+.edu {
+  display: grid;
+  grid-template-columns: 190px 1fr;
+  gap: clamp(16px, 3vw, 40px);
+  padding: clamp(20px, 2.6vw, 30px);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: var(--panel);
+  transition: border-color 0.3s var(--ease), transform 0.3s var(--ease),
+    box-shadow 0.3s var(--ease);
+}
+
+.edu:hover {
+  border-color: var(--line-2);
+  transform: translateY(-2px);
+}
+
+.edu--featured {
+  border-color: var(--accent-line);
+  background: linear-gradient(180deg, var(--accent-soft), var(--panel) 55%);
+  box-shadow: 0 12px 32px rgba(77, 163, 255, 0.08);
+}
+
+.edu__meta {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.edu__period {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--text-2);
+}
+
+.edu__level {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  width: fit-content;
+  padding: 4px 10px;
+  border: 1px solid var(--line);
+  border-radius: 100px;
+  background: rgba(255, 255, 255, 0.02);
+  font-family: var(--font-mono);
+  font-size: 0.625rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.edu--featured .edu__level {
+  border-color: var(--accent-line);
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+.edu__body h3 {
+  font-size: clamp(1.05rem, 1.8vw, 1.3rem);
+  letter-spacing: -0.02em;
+}
+
+.edu__qualification {
+  margin-top: 5px;
+  font-size: 0.875rem;
+  color: var(--accent);
+}
+
+.edu__facts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 28px;
+  margin-top: 16px;
+}
+
+.edu__facts > div {
+  display: grid;
+  gap: 3px;
+}
+
+.edu__facts dt {
+  font-family: var(--font-mono);
+  font-size: 0.59375rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted-2);
+}
+
+.edu__facts dd {
+  font-size: 0.875rem;
+  color: var(--text-2);
 }
 
 .degree {
@@ -1288,6 +1383,21 @@ main[id] {
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--muted-2);
+}
+
+.credentials__note {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  font-size: 0.8125rem;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+.credentials__note svg {
+  flex-shrink: 0;
+  margin-top: 3px;
+  color: var(--accent);
 }
 
 .certs {
@@ -1804,6 +1914,17 @@ main[id] {
 
   .job {
     grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .edu {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .edu__meta {
+    flex-direction: row;
+    align-items: baseline;
     gap: 14px;
   }
 

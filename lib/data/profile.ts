@@ -1,10 +1,50 @@
 /** Education, credentials and active focus areas. */
 
-export const education = {
-  degree: 'B.Sc. Engineering — Computer Engineering',
-  institution: 'International University of Business Agriculture and Technology (IUBAT)',
-  cgpa: '2.98 / 4.00',
-};
+export interface EducationEntry {
+  id: string;
+  level: 'School' | 'College' | 'University';
+  institution: string;
+  qualification: string;
+  field: string;
+  period: string;
+  result?: string;
+  note?: string;
+  featured?: boolean;
+}
+
+/** Complete academic journey, oldest first. */
+export const educationJourney: EducationEntry[] = [
+  {
+    id: 'school',
+    level: 'School',
+    institution: 'Uchakhila Bahumukhi High School',
+    qualification: 'Secondary School Certificate (SSC)',
+    field: 'Science',
+    period: '2014',
+    result: 'GPA 5.00 / 5.00',
+    note: 'Dhaka Board',
+  },
+  {
+    id: 'college',
+    level: 'College',
+    institution: 'Agricultural University College, Mymensingh',
+    qualification: 'Higher Secondary Certificate (HSC)',
+    field: 'Science',
+    period: '2016',
+    result: 'GPA 3.83 / 5.00',
+    note: 'Dhaka Board',
+  },
+  {
+    id: 'university',
+    level: 'University',
+    institution: 'International University of Business Agriculture and Technology (IUBAT)',
+    qualification: 'B.Sc. Engineering — Computer Engineering',
+    field: 'Faculty of Engineering',
+    period: 'B.Sc. Engineering',
+    result: 'CGPA 2.98 / 4.00',
+    featured: true,
+  },
+];
 
 export const certifications: { title: string; detail: string }[] = [
   { title: 'CCNA', detail: 'Course Completed' },
