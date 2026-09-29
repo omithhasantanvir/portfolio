@@ -87,7 +87,7 @@ export function SiteHeader() {
         </nav>
 
         <div className="site-header__actions">
-          <a className="btn btn--ghost btn--sm" href={site.cv}>
+          <a className="btn btn--ghost btn--sm" href={site.cv} download="Omith-Hasan-Resume.pdf">
             <Download size={15} aria-hidden="true" />
             Download CV
           </a>
@@ -124,7 +124,7 @@ export function SiteHeader() {
           <a href={site.socials.linkedin} onClick={close} rel="noreferrer" target="_blank">
             <Linkedin size={16} aria-hidden="true" /> LinkedIn
           </a>
-          <a href={site.cv} onClick={close}>
+          <a href={site.cv} onClick={close} download="Omith-Hasan-Resume.pdf">
             <Download size={16} aria-hidden="true" /> Download CV
           </a>
         </div>

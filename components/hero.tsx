@@ -43,7 +43,7 @@ export function Hero() {
               </a>
             </li>
             <li>
-              <a href={site.cv}>
+              <a href={site.cv} download="Omith-Hasan-Resume.pdf">
                 <FileText size={15} aria-hidden="true" /> CV / Resume
               </a>
             </li>

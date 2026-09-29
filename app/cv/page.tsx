@@ -29,6 +29,9 @@ export default function CvPage() {
             </p>
           </div>
           <div className="cv__actions no-print">
+            <a className="btn btn--primary btn--sm" href={site.cv} download="Omith-Hasan-Resume.pdf">
+              Download PDF resume
+            </a>
             <PrintButton />
             <a className="btn btn--ghost btn--sm" href="/">
               Back to portfolio
@@ -93,8 +96,12 @@ export default function CvPage() {
         </section>
 
         <p className="cv__note no-print">
-          Use your browser&apos;s print dialog and choose <em>Save as PDF</em> to keep a copy of this
-          CV.
+          This page mirrors the downloadable resume at{' '}
+          <a href={site.cv} download="Omith-Hasan-Resume.pdf">
+            {site.cv}
+          </a>
+          . Use your browser&apos;s print dialog and choose <em>Save as PDF</em> if you need a
+          copy of this page instead.
         </p>
       </div>
     </main>

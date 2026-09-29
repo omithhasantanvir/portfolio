@@ -44,7 +44,7 @@ export function Contact() {
                 <Github size={16} aria-hidden="true" />
                 GitHub
               </a>
-              <a className="btn btn--ghost" href={site.cv}>
+              <a className="btn btn--ghost" href={site.cv} download="Omith-Hasan-Resume.pdf">
                 <FileText size={16} aria-hidden="true" />
                 Download CV
               </a>

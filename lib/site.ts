@@ -16,7 +16,8 @@ export const site = {
   intro:
     'I’m an IT professional focused on Networking, Cybersecurity, System Administration and Broadcast IT. I solve infrastructure problems, automate repetitive work, and help keep critical systems reliable.',
   availability: 'Available for opportunities',
-  cv: '/cv',
+  cv: '/cv/omith-hasan-resume.pdf',
+  cvPage: '/cv',
   socials: {
     github: 'https://github.com/omithhasantanvir',
     // TODO: confirm this is your LinkedIn profile, or replace it with your real URL.

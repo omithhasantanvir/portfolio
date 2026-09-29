@@ -78,8 +78,9 @@ that were actually measured.
 ## Still to fill in
 
 - `lib/site.ts` → `socials.linkedin` — currently inferred from the GitHub handle, please confirm.
-- Optional: drop a PDF at `public/cv/omith-hasan-cv.pdf` and point the "Download CV" buttons
-  at it. Today they open `/cv`, which prints to PDF from the browser.
+- Resume file: `public/cv/omith-hasan-resume.pdf` is the downloadable CV. Every
+  "Download CV" button links to it via `site.cv` in `lib/site.ts`. Replace that PDF to
+  update the resume everywhere; the `/cv` page links to the same file.
 
 ## Deployment
 
