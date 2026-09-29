@@ -49,7 +49,7 @@ export const educationJourney: EducationEntry[] = [
 export const certifications: { title: string; detail: string }[] = [
   { title: 'CCNA', detail: 'Course Completed' },
   { title: 'CEHv12', detail: 'Course Completed' },
-  { title: 'RHCSA', detail: 'Self-taught' },
+  { title: 'RHCSA', detail: 'Course Completed' },
 ];
 
 /** "Currently focused on" grid. */

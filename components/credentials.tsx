@@ -84,8 +84,8 @@ export function Credentials() {
             </ul>
             <p className="credentials__note">
               <Award size={14} aria-hidden="true" />
-              Technical certifications sit alongside the degree — CCNA and CEHv12 courses
-              completed, RHCSA self-taught.
+              Technical certifications sit alongside the degree — CCNA, CEHv12 and RHCSA
+              courses completed.
             </p>
           </Reveal>
 
