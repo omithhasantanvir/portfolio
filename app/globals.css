@@ -1644,8 +1644,8 @@ main[id] {
 
 .edu--featured {
   border-color: var(--accent-line);
-  background: linear-gradient(180deg, var(--accent-soft), var(--panel) 55%);
-  box-shadow: 0 12px 32px rgba(77, 163, 255, 0.08);
+  background: var(--panel);
+  box-shadow: var(--shadow);
 }
 
 .edu__meta {
@@ -1668,7 +1668,7 @@ main[id] {
   padding: 4px 10px;
   border: 1px solid var(--line);
   border-radius: 100px;
-  background: rgba(255, 255, 255, 0.02);
+  background: var(--ghost-bg);
   font-family: var(--font-mono);
   font-size: 0.625rem;
   letter-spacing: 0.08em;
