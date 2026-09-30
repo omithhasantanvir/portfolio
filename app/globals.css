@@ -1173,11 +1173,201 @@ main[id] {
   border-left: 3px solid var(--accent-line);
 }
 
+/* Project banner visual --------------------------------------------------- */
+.project__visual {
+  margin: calc(clamp(22px, 3vw, 34px) * -1) calc(clamp(22px, 3vw, 34px) * -1) 0;
+  border-bottom: 1px solid var(--line);
+  background:
+    radial-gradient(420px 120px at 20% 0%, var(--hero-glow), transparent 70%),
+    linear-gradient(180deg, var(--panel-2), var(--panel));
+  overflow: hidden;
+}
+
+.project__visual svg {
+  display: block;
+  width: 100%;
+  height: 148px;
+}
+
+.pv__tag {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  fill: var(--muted-2);
+}
+
+.pv__wave {
+  fill: none;
+  stroke: var(--accent);
+  stroke-width: 2;
+  opacity: 0.85;
+}
+
+.pv__wave--soft {
+  opacity: 0.28;
+}
+
+.pv__nodes circle {
+  fill: var(--node-fill);
+  stroke: var(--accent-line);
+  stroke-width: 1.5;
+}
+
+.pv__links path {
+  fill: none;
+  stroke: var(--line-2);
+  stroke-width: 1.5;
+  stroke-dasharray: 5 5;
+}
+
+.pv__bars rect {
+  fill: var(--accent-soft);
+  stroke: var(--accent-line);
+  stroke-width: 1;
+}
+
+.pv__packet {
+  fill: var(--accent);
+  offset-path: path('M0 132 C 70 100, 120 162, 190 128 S 300 82, 370 122 S 480 168, 545 114 S 605 102, 640 124');
+  animation: pv-packet 4.5s linear infinite;
+}
+
+.pv__p2 {
+  animation-delay: -1.5s;
+}
+
+.pv__p3 {
+  animation-delay: -3s;
+}
+
+@keyframes pv-packet {
+  0% {
+    offset-distance: 0%;
+    opacity: 0;
+  }
+  8% {
+    opacity: 1;
+  }
+  92% {
+    opacity: 1;
+  }
+  100% {
+    offset-distance: 100%;
+    opacity: 0;
+  }
+}
+
+.pv__shield {
+  fill: var(--accent-soft);
+  stroke: var(--accent);
+  stroke-width: 2;
+}
+
+.pv__shield-check {
+  fill: none;
+  stroke: var(--accent);
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.pv__scan path {
+  stroke: var(--line-2);
+  stroke-width: 1.5;
+  stroke-dasharray: 4 5;
+}
+
+.pv__scan-dot {
+  fill: var(--accent);
+}
+
+.pv__s1 {
+  offset-path: path('M40 96 H220');
+  animation: pv-packet 3s linear infinite;
+}
+
+.pv__s2 {
+  offset-path: path('M420 96 H600');
+  animation: pv-packet 3.6s linear infinite reverse;
+}
+
+.pv__tower path {
+  fill: none;
+  stroke: var(--text-2);
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.pv__tower circle {
+  fill: var(--accent);
+}
+
+.pv__arcs path {
+  fill: none;
+  stroke: var(--accent);
+  stroke-width: 2;
+  stroke-linecap: round;
+  opacity: 0.75;
+  animation: pv-arc 2.4s var(--ease) infinite alternate;
+}
+
+.pv__arcs path:nth-child(2) {
+  animation-delay: -0.8s;
+  opacity: 0.5;
+}
+
+.pv__arcs path:nth-child(3) {
+  animation-delay: -1.6s;
+  opacity: 0.3;
+}
+
+@keyframes pv-arc {
+  from {
+    transform: translateY(0);
+    opacity: 0.75;
+  }
+  to {
+    transform: translateY(-2px);
+    opacity: 0.3;
+  }
+}
+
+.pv__racks rect {
+  fill: var(--node-fill);
+  stroke: var(--line-2);
+  stroke-width: 1.2;
+}
+
+.pv__uptime {
+  fill: #2fbf71;
+}
+
+.pv__u1,
+.pv__u2 {
+  animation: pv-blink 1.8s ease-in-out infinite;
+}
+
+.pv__u2 {
+  animation-delay: -0.9s;
+}
+
+@keyframes pv-blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.35;
+  }
+}
+
 .project__head {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
   gap: 10px 14px;
+  margin-top: 20px;
 }
 
 .project__index {
@@ -2288,6 +2478,10 @@ main[id] {
     flex-basis: 100%;
   }
 
+  .project__visual svg {
+    height: 120px;
+  }
+
   .contact-form .btn {
     justify-self: stretch;
   }
@@ -2323,7 +2517,12 @@ main[id] {
 
   .topology__packet,
   .topology__pulse,
-  .stack__flow {
+  .stack__flow,
+  .pv__packet,
+  .pv__scan-dot,
+  .pv__arcs path,
+  .pv__u1,
+  .pv__u2 {
     display: none;
   }
 }

@@ -1,6 +1,7 @@
 import { ArrowUpRight, ExternalLink, Github } from 'lucide-react';
 
 import { Reveal } from '@/components/reveal';
+import { ProjectVisual } from '@/components/project-visual';
 import { projects } from '@/lib/data';
 
 function Detail({ label, value }: { label: string; value: string }) {
@@ -35,6 +36,7 @@ export function Projects() {
             return (
               <Reveal key={project.title}>
                 <article className={`project${documented ? '' : ' project--pending'}`}>
+                  <ProjectVisual index={project.index} title={project.title} />
                   <header className="project__head">
                     <span className="project__index" aria-hidden="true">
                       {project.index}
