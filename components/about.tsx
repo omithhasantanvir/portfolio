@@ -55,7 +55,7 @@ export function About() {
             <figure className="photo">
               <div className="photo__frame">
                 <Image
-                  src="/images/omith-hasan.jpg"
+                  src="/images/omith-hasan-portrait.jpg"
                   alt="Portrait of Omith Hasan"
                   width={1120}
                   height={1288}

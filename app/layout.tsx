@@ -52,9 +52,9 @@ export const metadata: Metadata = {
     locale: 'en_US',
     images: [
       {
-        url: '/images/omith-hasan.jpg',
-        width: 1402,
-        height: 1122,
+        url: '/images/omith-hasan-portrait.jpg',
+        width: 1120,
+        height: 1288,
         alt: `Portrait of ${site.name}`,
       },
     ],
@@ -63,7 +63,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: `${site.name} | ${site.role}`,
     description,
-    images: ['/images/omith-hasan.jpg'],
+    images: ['/images/omith-hasan-portrait.jpg'],
   },
   robots: {
     index: true,
