@@ -53,13 +53,16 @@ export function About() {
 
           <Reveal className="about__media" delay={80}>
             <figure className="photo">
-              <Image
-                src="/images/omith-hasan.jpg"
-                alt="Portrait of Omith Hasan"
-                width={1402}
-                height={1122}
-                sizes="(max-width: 900px) 100vw, 480px"
-              />
+              <div className="photo__frame">
+                <Image
+                  src="/images/omith-hasan.jpg"
+                  alt="Portrait of Omith Hasan"
+                  width={1120}
+                  height={1288}
+                  sizes="(max-width: 980px) 100vw, 440px"
+                  priority
+                />
+              </div>
               <figcaption className="photo__caption">
                 <span>{site.name}</span>
                 <span>{site.location}</span>
