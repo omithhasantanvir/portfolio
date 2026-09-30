@@ -98,7 +98,7 @@ export function Credentials() {
                     alt="Omith Hasan at his graduation ceremony"
                     width={960}
                     height={1200}
-                    sizes="(max-width: 560px) 100vw, (max-width: 980px) 42vw, 260px"
+                    sizes="(max-width: 560px) 100vw, (max-width: 980px) 45vw, 330px"
                   />
                 </div>
                 <figcaption>Graduation</figcaption>
@@ -110,7 +110,7 @@ export function Credentials() {
                     alt="Omith Hasan outside the IUBAT campus in Dhaka"
                     width={960}
                     height={1200}
-                    sizes="(max-width: 560px) 100vw, (max-width: 980px) 42vw, 260px"
+                    sizes="(max-width: 560px) 100vw, (max-width: 980px) 45vw, 330px"
                   />
                 </div>
                 <figcaption>IUBAT campus</figcaption>
