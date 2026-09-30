@@ -29,3 +29,12 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# temp / debug
+gitlog.txt
+gitstatus.txt
+
+# original upload with spaces — renamed copy lives in public/images/
+public/WhatsApp Image*.jpeg
+public/WhatsApp Image*.jpg
+public/WhatsApp Image*.png
