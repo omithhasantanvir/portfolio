@@ -36,7 +36,9 @@ export function Projects() {
               <Reveal key={project.title}>
                 <article className={`project${documented ? '' : ' project--pending'}`}>
                   <header className="project__head">
-                    <p className="label label--muted">{project.index}</p>
+                    <span className="project__index" aria-hidden="true">
+                      {project.index}
+                    </span>
                     <h3>{project.title}</h3>
                     {!documented && <p className="badge">Case study in progress</p>}
                   </header>

@@ -1138,11 +1138,25 @@ main[id] {
 }
 
 .project {
+  position: relative;
   padding: clamp(22px, 3vw, 34px);
   border: 1px solid var(--line);
   border-radius: var(--radius-lg);
   background: var(--panel);
-  transition: border-color 0.3s var(--ease), transform 0.3s var(--ease);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  transition: border-color 0.3s var(--ease), transform 0.3s var(--ease),
+    box-shadow 0.3s var(--ease);
+}
+
+.project::before {
+  content: '';
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--accent-line), transparent);
+  opacity: 0;
+  transition: opacity 0.3s var(--ease);
 }
 
 .project:hover {
@@ -1150,25 +1164,51 @@ main[id] {
   transform: translateY(-2px);
 }
 
+.project:hover::before {
+  opacity: 1;
+}
+
 .project--pending {
-  background: linear-gradient(180deg, var(--panel), rgba(10, 13, 17, 0.5));
+  background: var(--panel);
+  border-left: 3px solid var(--accent-line);
 }
 
 .project__head {
   display: flex;
-  align-items: baseline;
+  align-items: center;
   flex-wrap: wrap;
-  gap: 12px 18px;
+  gap: 10px 14px;
+}
+
+.project__index {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 34px;
+  height: 26px;
+  padding: 0 8px;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  background: var(--ghost-bg);
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.1em;
+  color: var(--muted-2);
 }
 
 .project__head h3 {
+  flex: 1 1 auto;
+  min-width: min(100%, 220px);
   font-size: clamp(1.15rem, 2vw, 1.45rem);
   letter-spacing: -0.02em;
 }
 
 .badge {
   margin-left: auto;
-  padding: 5px 10px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
   border: 1px solid var(--accent-line);
   border-radius: 100px;
   background: var(--accent-soft);
@@ -1177,18 +1217,39 @@ main[id] {
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--accent);
+  white-space: nowrap;
+}
+
+.badge::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 0 3px var(--dot-pulse);
+  flex-shrink: 0;
 }
 
 .project__summary {
-  margin-top: 14px;
+  margin-top: 12px;
   max-width: 78ch;
+  font-size: 0.9375rem;
   color: var(--text-2);
 }
 
 .project__pending {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
   margin-top: 12px;
-  font-size: 0.8125rem;
-  color: var(--muted-2);
+  padding: 10px 13px;
+  border: 1px dashed var(--line-2);
+  border-radius: var(--radius-sm);
+  background: var(--ghost-bg);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  line-height: 1.6;
+  color: var(--muted);
 }
 
 .project__details {
@@ -1228,7 +1289,14 @@ main[id] {
 }
 
 .chips--tech li {
+  border-color: var(--line-2);
   color: var(--text-2);
+  transition: border-color 0.25s var(--ease), color 0.25s var(--ease);
+}
+
+.chips--tech li:hover {
+  border-color: var(--accent-line);
+  color: var(--accent);
 }
 
 .project__links {
@@ -2214,6 +2282,10 @@ main[id] {
 
   .project__head .badge {
     margin-left: 0;
+  }
+
+  .project__head h3 {
+    flex-basis: 100%;
   }
 
   .contact-form .btn {
