@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { Download, Github, Linkedin, Mail, Menu, X } from 'lucide-react';
 
 import { navSections, site } from '@/lib/site';
+import { ThemeToggle } from '@/components/theme-toggle';
 
 /**
  * Sticky navigation. Shrinks subtly after scrolling, highlights the section in
@@ -87,9 +88,10 @@ export function SiteHeader() {
         </nav>
 
         <div className="site-header__actions">
+          <ThemeToggle />
           <a className="btn btn--ghost btn--sm" href={site.cv} download="Omith-Hasan-Resume.pdf">
             <Download size={15} aria-hidden="true" />
-            Download CV
+            <span className="site-header__cv-label">Download CV</span>
           </a>
           <button
             className="nav-toggle"
@@ -115,6 +117,9 @@ export function SiteHeader() {
           ))}
         </ul>
         <div className="mobile-nav__meta">
+          <div className="mobile-nav__theme">
+            <ThemeToggle />
+          </div>
           <a href={`mailto:${site.email}`} onClick={close}>
             <Mail size={16} aria-hidden="true" /> {site.email}
           </a>
