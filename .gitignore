@@ -33,6 +33,8 @@ next-env.d.ts
 # temp / debug
 gitlog.txt
 gitstatus.txt
+_*.txt
+_*.bat
 
 # original upload with spaces — renamed copy lives in public/images/
 public/WhatsApp Image*.jpeg
