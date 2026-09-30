@@ -90,25 +90,29 @@ export function Credentials() {
           </Reveal>
 
           <Reveal className="credentials__media" delay={80}>
-            <div className="gallery">
-              <figure>
-                <Image
-                  src="/images/omith-hasan-graduation.jpg"
-                  alt="Omith Hasan at his graduation ceremony"
-                  width={960}
-                  height={1280}
-                  sizes="(max-width: 700px) 45vw, 240px"
-                />
+            <div className="gallery" role="list">
+              <figure role="listitem">
+                <div className="gallery__frame">
+                  <Image
+                    src="/images/omith-hasan-graduation.jpg"
+                    alt="Omith Hasan at his graduation ceremony"
+                    width={960}
+                    height={1200}
+                    sizes="(max-width: 560px) 100vw, (max-width: 980px) 42vw, 260px"
+                  />
+                </div>
                 <figcaption>Graduation</figcaption>
               </figure>
-              <figure>
-                <Image
-                  src="/images/omith-hasan-iubat.jpg"
-                  alt="Omith Hasan outside the IUBAT campus in Dhaka"
-                  width={868}
-                  height={1085}
-                  sizes="(max-width: 700px) 45vw, 240px"
-                />
+              <figure role="listitem">
+                <div className="gallery__frame">
+                  <Image
+                    src="/images/omith-hasan-iubat.jpg"
+                    alt="Omith Hasan outside the IUBAT campus in Dhaka"
+                    width={960}
+                    height={1200}
+                    sizes="(max-width: 560px) 100vw, (max-width: 980px) 42vw, 260px"
+                  />
+                </div>
                 <figcaption>IUBAT campus</figcaption>
               </figure>
             </div>
