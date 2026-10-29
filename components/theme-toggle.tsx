@@ -18,7 +18,6 @@ function getInitialTheme(): Theme {
   if (typeof window !== 'undefined') {
     const stored = window.localStorage.getItem('omith-theme');
     if (stored === 'light' || stored === 'dark') return stored;
-    if (window.matchMedia('(prefers-color-scheme: light)').matches) return 'light';
   }
   return 'dark';
 }

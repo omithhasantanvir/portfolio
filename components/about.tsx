@@ -1,44 +1,88 @@
 import Image from 'next/image';
+import { Award, BookOpen, Clock, ShieldCheck } from 'lucide-react';
 
 import { Reveal } from '@/components/reveal';
 import { site } from '@/lib/site';
 
+const stats = [
+  {
+    icon: ShieldCheck,
+    value: '5 Badges',
+    label: 'Verified Credentials',
+    detail: 'Cisco CCNA & Red Hat RHCSA',
+  },
+  {
+    icon: Award,
+    value: '4 Disciplines',
+    label: 'Core Focus',
+    detail: 'Networking · Security · Systems · Broadcast',
+  },
+  {
+    icon: BookOpen,
+    value: 'B.Sc. Eng.',
+    label: 'Computer Engineering',
+    detail: 'IUBAT, Dhaka',
+  },
+  {
+    icon: Clock,
+    value: 'Always-On',
+    label: 'Broadcast IT',
+    detail: 'High Availability Systems',
+  },
+];
+
 const facts = [
   { label: 'Role', value: site.role },
   { label: 'Location', value: site.location },
-  { label: 'Focus', value: site.disciplines.join(' · ') },
   { label: 'Availability', value: site.availability },
+  { label: 'Specialization', value: site.disciplines.join(' · ') },
 ];
 
-/** About: where the work sits, and how the author thinks about it. */
+/** About: engineering mindset, core pillars and background. */
 export function About() {
   return (
     <section className="section" id="about">
       <div className="container">
         <Reveal>
           <div className="section-head">
-            <p className="label">01 / About</p>
+            <p className="label">01 / About Me</p>
             <h2>Engineering reliable systems behind the scenes.</h2>
+            <p className="section-head__note">
+              My work sits at the intersection of network engineering, system administration, cybersecurity and broadcast IT operations.
+            </p>
           </div>
         </Reveal>
+
+        <div className="about-stats-grid">
+          {stats.map((item, idx) => {
+            const Icon = item.icon;
+            return (
+              <Reveal delay={idx * 50} key={item.label}>
+                <div className="stat-card">
+                  <div className="stat-card__icon">
+                    <Icon size={18} aria-hidden="true" />
+                  </div>
+                  <div className="stat-card__body">
+                    <div className="stat-card__value">{item.value}</div>
+                    <div className="stat-card__label">{item.label}</div>
+                    <div className="stat-card__detail">{item.detail}</div>
+                  </div>
+                </div>
+              </Reveal>
+            );
+          })}
+        </div>
 
         <div className="about">
           <Reveal className="about__copy">
             <p className="lede">
-              My work sits at the intersection of networking, infrastructure, cybersecurity, systems
-              administration and broadcast technology.
+              Infrastructure is invisible when it is done well: traffic moves predictably, services answer immediately, and critical broadcasts stay on air.
             </p>
             <p>
-              Infrastructure is invisible when it is done well: traffic moves, services answer,
-              broadcasts stay on air. Most of the work is practical problem solving — tracing why
-              something behaves unexpectedly, removing the single points of failure around it, and
-              making the next failure easier to see and diagnose.
+              Most of my daily work is practical problem solving — diagnosing why a system behaves unexpectedly, isolating single points of failure, and introducing monitoring so the next issue is caught before it impacts operations.
             </p>
             <p>
-              In practice that means configuring and troubleshooting networks, controlling and
-              monitoring what is exposed, administering servers and services, and automating the
-              repetitive parts so operations stay consistent. Reliability is rarely a feature added
-              at the end; it is a consequence of how a system is built and watched.
+              From routing protocols and firewall inspection to Linux server hardening and always-on broadcast IT systems, I build infrastructure designed to withstand real-world demands.
             </p>
 
             <dl className="facts">
@@ -55,12 +99,11 @@ export function About() {
             <figure className="photo">
               <div className="photo__frame">
                 <Image
-                  src="/images/omith-hasan-portrait.jpg"
-                  alt="Portrait of Omith Hasan"
-                  width={1120}
-                  height={1288}
+                  src="/images/omith-hasan.jpg"
+                  alt="Omith Hasan — IT & Network Engineer"
+                  width={960}
+                  height={1100}
                   sizes="(max-width: 980px) 100vw, 440px"
-                  priority
                 />
               </div>
               <figcaption className="photo__caption">

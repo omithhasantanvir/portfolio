@@ -1,82 +1,112 @@
-import { ArrowRight, Award, FileText, Github, Linkedin, Mail, MapPin } from 'lucide-react';
+import Image from 'next/image';
+import { ArrowRight, Award, Download, Github, Linkedin, Mail, MapPin, ShieldCheck } from 'lucide-react';
 
 import { site } from '@/lib/site';
-import { Topology } from '@/components/topology';
 
-/** Hero: identity, positioning, primary actions and the infrastructure visual. */
+/** Hero: personal portrait, verified badge highlights, headline and primary actions. */
 export function Hero() {
   return (
     <section className="hero" id="top">
       <div className="container hero__inner">
         <div className="hero__copy">
-          <p className="label hero__label">{site.role}</p>
+          <div className="hero__status">
+            <span className="hero__status-badge">
+              <span className="hero__status-dot" aria-hidden="true" />
+              {site.availability}
+            </span>
+            <span className="hero__location">
+              <MapPin size={13} aria-hidden="true" />
+              {site.location}
+            </span>
+          </div>
 
-          <h1 className="hero__name">{site.name}</h1>
+          <p className="hero__role">{site.role}</p>
+
+          <h1 className="hero__name">
+            Hi, I&apos;m <span className="hero__name-accent">{site.name}</span>
+          </h1>
 
           <p className="hero__positioning">{site.positioning}</p>
           <p className="hero__intro">{site.intro}</p>
 
           <div className="hero__actions">
-            <a className="btn btn--primary" href="/#experience">
+            <a className="btn btn--primary" href="#experience">
               View Experience
-              <ArrowRight size={16} aria-hidden="true" />
+              <ArrowRight size={15} aria-hidden="true" />
             </a>
-            <a className="btn btn--outline" href="/#contact">
+            <a className="btn btn--outline" href="#contact">
               Let&apos;s Connect
+            </a>
+            <a className="btn btn--ghost" href={site.cv} download="Omith-Hasan-Resume.pdf">
+              <Download size={15} aria-hidden="true" />
+              Download CV
             </a>
           </div>
 
-          <ul className="hero__links">
+          <ul className="hero__links" aria-label="Social and professional links">
             <li>
-              <a href={site.socials.github} target="_blank" rel="noreferrer">
-                <Github size={15} aria-hidden="true" /> GitHub
+              <a href={site.socials.github} target="_blank" rel="noreferrer" title="GitHub">
+                <Github size={16} aria-hidden="true" />
+                <span>GitHub</span>
               </a>
             </li>
             <li>
-              <a href={site.socials.linkedin} target="_blank" rel="noreferrer">
-                <Linkedin size={15} aria-hidden="true" /> LinkedIn
+              <a href={site.socials.linkedin} target="_blank" rel="noreferrer" title="LinkedIn">
+                <Linkedin size={16} aria-hidden="true" />
+                <span>LinkedIn</span>
               </a>
             </li>
             <li>
-              <a href={site.socials.credly} target="_blank" rel="noreferrer">
-                <Award size={15} aria-hidden="true" /> Credly
+              <a href={site.socials.credly} target="_blank" rel="noreferrer" title="Credly Badges">
+                <Award size={16} aria-hidden="true" />
+                <span>Credly (5 Badges)</span>
               </a>
             </li>
             <li>
-              <a href={`mailto:${site.email}`}>
-                <Mail size={15} aria-hidden="true" /> Email
-              </a>
-            </li>
-            <li>
-              <a href={site.cv} download="Omith-Hasan-Resume.pdf">
-                <FileText size={15} aria-hidden="true" /> CV / Resume
+              <a href={`mailto:${site.email}`} title="Email">
+                <Mail size={16} aria-hidden="true" />
+                <span>Email</span>
               </a>
             </li>
           </ul>
-
-          <p className="availability">
-            <span className="availability__dot" aria-hidden="true" />
-            {site.availability}
-            <span className="availability__meta">
-              <MapPin size={13} aria-hidden="true" /> {site.location}
-            </span>
-          </p>
         </div>
 
         <div className="hero__visual">
-          <div className="visual-frame">
-            <div className="visual-frame__bar">
-              <span className="visual-frame__dots" aria-hidden="true">
-                <i />
-                <i />
-                <i />
-              </span>
-              <span className="visual-frame__title">network · path</span>
+          <div className="hero-portrait">
+            <div className="hero-portrait__glow" aria-hidden="true" />
+            <div className="hero-portrait__frame">
+              <Image
+                src="/images/omith-hasan-portrait.jpg"
+                alt="Portrait of Omith Hasan — IT & Network Engineer"
+                width={520}
+                height={620}
+                className="hero-portrait__img"
+                priority
+              />
+              <div className="hero-portrait__overlay" />
+
+              {/* Floating verified badge tag */}
+              <a
+                href="#education"
+                className="hero-portrait__tag hero-portrait__tag--top"
+                title="View Credly Badges"
+              >
+                <ShieldCheck size={16} className="hero-portrait__tag-icon" aria-hidden="true" />
+                <div>
+                  <strong>5 Digital Badges</strong>
+                  <span>Cisco &amp; Red Hat Verified</span>
+                </div>
+              </a>
+
+              {/* Floating credentials pill */}
+              <div className="hero-portrait__tag hero-portrait__tag--bottom">
+                <Award size={16} className="hero-portrait__tag-icon" aria-hidden="true" />
+                <div>
+                  <strong>CCNA · RHCSA · CEHv12</strong>
+                  <span>Networking &amp; Security</span>
+                </div>
+              </div>
             </div>
-            <Topology />
-            <p className="visual-frame__caption">
-              Traffic path — ingress, security inspection, distribution, monitoring
-            </p>
           </div>
         </div>
       </div>
