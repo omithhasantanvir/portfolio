@@ -41,7 +41,7 @@ export function Hero() {
                 {site.role}
               </p>
               <h1 className="hero-title">
-                Hi, I&apos;m <span className="gradient-text">{site.name}</span>
+                Hi, I&apos;m <span className="hero-name-highlight">{site.name}</span>
               </h1>
               <p className="hero-tagline">{site.positioning}</p>
               <p className="hero-bio">{site.intro}</p>
@@ -99,7 +99,7 @@ export function Hero() {
             </div>
           </div>
 
-          {/* Portrait Bento Card */}
+          {/* Portrait Bento Card — Clean, unobstructed view */}
           <div className="bento-card bento-card--hero-portrait">
             <div className="portrait-wrapper">
               <Image
@@ -110,29 +110,6 @@ export function Hero() {
                 priority
                 className="portrait-img"
               />
-              <div className="portrait-glass-overlay" />
-
-              {/* Floating verified badge tag */}
-              <a
-                href="#education"
-                className="floating-badge floating-badge--top"
-                title="View Credly Badges"
-              >
-                <ShieldCheck size={16} className="floating-badge__icon" aria-hidden="true" />
-                <div>
-                  <strong>5 Digital Badges</strong>
-                  <span>Cisco &amp; Red Hat Verified</span>
-                </div>
-              </a>
-
-              {/* Floating credentials pill */}
-              <div className="floating-badge floating-badge--bottom">
-                <Award size={16} className="floating-badge__icon" aria-hidden="true" />
-                <div>
-                  <strong>CCNA · RHCSA · CEHv12</strong>
-                  <span>Networking &amp; Security</span>
-                </div>
-              </div>
             </div>
           </div>
 
