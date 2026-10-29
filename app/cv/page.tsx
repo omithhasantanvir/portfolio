@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 
 import { PrintButton } from '@/components/print-button';
-import { certifications, educationJourney, experience, expertise } from '@/lib/data';
+import { credlyBadges, educationJourney, experience, expertise } from '@/lib/data';
 import { site } from '@/lib/site';
 
 export const metadata: Metadata = {
@@ -92,14 +92,43 @@ export default function CvPage() {
         </section>
 
         <section className="cv__section">
-          <h2>Certifications &amp; training</h2>
+          <div className="cv__section-head">
+            <h2>Certifications &amp; credentials</h2>
+            <a
+              className="cv__ext-link no-print"
+              href={site.socials.credly}
+              target="_blank"
+              rel="noreferrer"
+            >
+              Verify all on Credly ↗
+            </a>
+          </div>
           <ul className="cv__certs">
-            {certifications.map((cert) => (
-              <li key={cert.title}>
-                <strong>{cert.title}</strong>
-                <span>{cert.detail}</span>
+            {credlyBadges.map((badge) => (
+              <li key={badge.id}>
+                <div className="cv__cert-info">
+                  <strong>{badge.title}</strong>
+                  <p className="cv__cert-issuer">
+                    {badge.issuer} · Issued {badge.issueDate}
+                  </p>
+                </div>
+                <a
+                  className="cv__cert-verify no-print"
+                  href={badge.url}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Verify ↗
+                </a>
               </li>
             ))}
+            <li>
+              <div className="cv__cert-info">
+                <strong>Certified Ethical Hacker (CEHv12)</strong>
+                <p className="cv__cert-issuer">EC-Council Course Completed</p>
+              </div>
+              <span className="cv__cert-status">Training</span>
+            </li>
           </ul>
         </section>
 

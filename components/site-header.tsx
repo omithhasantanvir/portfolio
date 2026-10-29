@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
-import { Download, Github, Linkedin, Mail, Menu, X } from 'lucide-react';
+import { Award, Download, Github, Linkedin, Mail, Menu, X } from 'lucide-react';
 
 import { navSections, site } from '@/lib/site';
 import { ThemeToggle } from '@/components/theme-toggle';
@@ -128,6 +128,9 @@ export function SiteHeader() {
           </a>
           <a href={site.socials.linkedin} onClick={close} rel="noreferrer" target="_blank">
             <Linkedin size={16} aria-hidden="true" /> LinkedIn
+          </a>
+          <a href={site.socials.credly} onClick={close} rel="noreferrer" target="_blank">
+            <Award size={16} aria-hidden="true" /> Credly
           </a>
           <a href={site.cv} onClick={close} download="Omith-Hasan-Resume.pdf">
             <Download size={16} aria-hidden="true" /> Download CV

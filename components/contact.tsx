@@ -1,4 +1,4 @@
-import { FileText, Github, Linkedin, Mail, Phone } from 'lucide-react';
+import { Award, FileText, Github, Linkedin, Mail, Phone } from 'lucide-react';
 
 import { ContactForm } from '@/components/contact-form';
 import { Reveal } from '@/components/reveal';
@@ -43,6 +43,10 @@ export function Contact() {
               <a className="btn btn--ghost" href={site.socials.github} target="_blank" rel="noreferrer">
                 <Github size={16} aria-hidden="true" />
                 GitHub
+              </a>
+              <a className="btn btn--ghost" href={site.socials.credly} target="_blank" rel="noreferrer">
+                <Award size={16} aria-hidden="true" />
+                Credly Badges
               </a>
               <a className="btn btn--ghost" href={site.cv} download="Omith-Hasan-Resume.pdf">
                 <FileText size={16} aria-hidden="true" />

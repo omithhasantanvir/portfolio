@@ -20,8 +20,8 @@ export const site = {
   cvPage: '/cv',
   socials: {
     github: 'https://github.com/omithhasantanvir',
-    // TODO: confirm this is your LinkedIn profile, or replace it with your real URL.
     linkedin: 'https://www.linkedin.com/in/omithhasantanvir',
+    credly: 'https://www.credly.com/users/omithhasantanvir/badges',
   },
   nav: [
     { label: 'Home', href: '#top' },

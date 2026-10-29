@@ -1,4 +1,4 @@
-import { ArrowRight, FileText, Github, Linkedin, Mail, MapPin } from 'lucide-react';
+import { ArrowRight, Award, FileText, Github, Linkedin, Mail, MapPin } from 'lucide-react';
 
 import { site } from '@/lib/site';
 import { Topology } from '@/components/topology';
@@ -35,6 +35,11 @@ export function Hero() {
             <li>
               <a href={site.socials.linkedin} target="_blank" rel="noreferrer">
                 <Linkedin size={15} aria-hidden="true" /> LinkedIn
+              </a>
+            </li>
+            <li>
+              <a href={site.socials.credly} target="_blank" rel="noreferrer">
+                <Award size={15} aria-hidden="true" /> Credly
               </a>
             </li>
             <li>

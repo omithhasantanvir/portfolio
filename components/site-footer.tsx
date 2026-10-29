@@ -1,4 +1,4 @@
-import { Github, Linkedin, Mail } from 'lucide-react';
+import { Award, Github, Linkedin, Mail } from 'lucide-react';
 
 import { site } from '@/lib/site';
 
@@ -24,6 +24,12 @@ export function SiteFooter() {
             <a href={site.socials.linkedin} target="_blank" rel="noreferrer">
               <Linkedin size={15} aria-hidden="true" />
               LinkedIn
+            </a>
+          </li>
+          <li>
+            <a href={site.socials.credly} target="_blank" rel="noreferrer">
+              <Award size={15} aria-hidden="true" />
+              Credly
             </a>
           </li>
           <li>
