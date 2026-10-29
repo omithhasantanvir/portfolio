@@ -16,14 +16,38 @@ export type Project = {
 /**
  * Projects / technical work — case-study style.
  *
- * These are placeholders on purpose. To publish a case study: fill in `problem`,
- * `solution`, `role`, `architecture`, `outcome`, add `links`, then change
- * `status` to 'documented' and the card switches to the full layout.
- * Only publish outcomes that were actually measured.
+ * Thesis project is fully documented with real architecture, problem, solution, role, and outcome.
+ * Other operational projects can be documented as measured results become available.
  */
 export const projects: Project[] = [
   {
     index: '01',
+    status: 'documented',
+    title: 'Container Fire Detection System with Wireless Sensor',
+    summary:
+      'Undergraduate B.Sc. Engineering Thesis: An IoT-based automated early fire detection and wireless safety monitoring system for chemical and cargo containers using ESP8266, multi-sensor detection, and instant Telegram/SMS alert notifications.',
+    tech: [
+      'IoT',
+      'ESP8266',
+      'Wireless Sensors',
+      'Telegram API',
+      'Flame & Heat Sensors',
+      'Embedded C/C++',
+      'Hardware Prototyping',
+    ],
+    problem:
+      'Industrial and transport containers (especially those housing volatile chemicals) are at high risk of rapid, catastrophic fires. Conventional fire alarms lack remote connectivity, cannot pinpoint isolated container locations across transit yards, and fail to alert authorities before fires spread.',
+    solution:
+      'Designed and built an intelligent wireless fire detection system utilizing an ESP8266 microcontroller paired with flame and temperature sensors, an LCD display, and the Telegram API. Upon detecting heat, flame, or smoke, the system triggers local audiovisual feedback and instantly dispatches emergency SMS and Telegram alerts containing a live link to the container’s location.',
+    role:
+      'Lead Project Researcher & Hardware/Firmware Developer (IUBAT B.Sc. Engineering Thesis). Responsible for sensor circuit design, ESP8266 microcontroller programming in C/C++, Telegram Bot API integration, and end-to-end hardware prototype testing.',
+    architecture:
+      'Multi-Level Sensor Nodes (Flame, Heat, Smoke) -> ESP8266 Microcontroller -> Local LCD Control Panel & Alarm -> Wi-Fi Gateway -> Telegram Cloud API & SMS Alert -> Emergency Rescue Link with Container ID & Location.',
+    outcome:
+      'Successfully verified rapid multi-level sensor response times, reliable instant Telegram alert delivery, low-power consumption with ESP8266, and clear local display readings, delivering a low-cost, user-friendly prototype to protect lives and cargo.',
+  },
+  {
+    index: '02',
     status: 'in-progress',
     title: 'Network Monitoring & Traffic Analysis',
     summary:
@@ -31,7 +55,7 @@ export const projects: Project[] = [
     tech: ['Wireshark', 'Linux', 'Networking'],
   },
   {
-    index: '02',
+    index: '03',
     status: 'in-progress',
     title: 'Security Monitoring & Traffic Inspection',
     summary:
@@ -39,7 +63,7 @@ export const projects: Project[] = [
     tech: ['IDS/IPS', 'Firewall', 'Traffic analysis'],
   },
   {
-    index: '03',
+    index: '04',
     status: 'in-progress',
     title: 'Broadcast IT Systems Support',
     summary:

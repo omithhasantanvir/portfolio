@@ -10,6 +10,12 @@ export interface EducationEntry {
   result?: string;
   note?: string;
   featured?: boolean;
+  thesis?: {
+    title: string;
+    type?: string;
+    abstract: string;
+    technologies: string[];
+  };
 }
 
 /** Complete academic journey, oldest first. */
@@ -43,6 +49,21 @@ export const educationJourney: EducationEntry[] = [
     period: 'B.Sc. Engineering',
     result: 'CGPA 2.98 / 4.00',
     featured: true,
+    thesis: {
+      title: 'Container Fire Detection System with Wireless Sensor',
+      type: 'Undergraduate B.Sc. Engineering Thesis',
+      abstract:
+        "Now a day, we frequently hear about fires, and the number of people killed or injured as a result of fires is increasing. The project's goal is to detect fires early and to reduce fire-related losses. This project's Container fire detection system with wireless sensor will play an important role in detecting and monitoring the container to determine whether an unexpected situation has occurred. The Container Fire Detection System seeks to develop a system that ensures the safety of the container (which may contain chemicals) by sending an SMS alert to corporate officials for rescue as soon as a fire is detected. This is accomplished by utilizing IoT. The proposed system focuses primarily on developing a fire detection system using an ESP 8266 Microcontroller in conjunction with a temperature sensor, flame sensor, LCD monitor, and Telegram API. Initially, several sensors will be placed throughout the container to detect fire, and if a fire is detected, SMS will provide the fire detected container location via a link using the Telegram account. Following the completion of the project, the system is expected to respond quickly to the current situation. The system is capable of detecting heat, flame, and smoke detected by the detectors. When the sensors on each level are triggered individually, the main system activates and sends a message to the owner, as well as displaying the data on the control panel LCD display. The goal of this thesis is to design a low-cost, effective fire alarm and detection system that is user-friendly and simple to use. Sensors and ESP are used to reduce electricity waste and save lives in order to reduce the percentage of accidents.",
+      technologies: [
+        'IoT',
+        'ESP8266 Microcontroller',
+        'Wireless Sensors',
+        'Telegram Bot API',
+        'Flame & Heat Sensors',
+        'Embedded C/C++',
+        'Hardware Prototyping',
+      ],
+    },
   },
 ];
 

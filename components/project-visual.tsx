@@ -8,6 +8,112 @@ export function ProjectVisual({ index, title }: { index: string; title: string }
     <div className="project__visual" aria-hidden="true">
       {index === '01' && (
         <svg viewBox="0 0 640 200" preserveAspectRatio="xMidYMid slice" role="presentation">
+          {/* Container hull outline */}
+          <rect
+            x="130"
+            y="76"
+            width="380"
+            height="100"
+            rx="6"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="1.5"
+            strokeOpacity="0.35"
+          />
+          {/* Container vertical corrugations */}
+          <g stroke="currentColor" strokeWidth="1" strokeOpacity="0.14">
+            <line x1="170" y1="76" x2="170" y2="176" />
+            <line x1="210" y1="76" x2="210" y2="176" />
+            <line x1="250" y1="76" x2="250" y2="176" />
+            <line x1="290" y1="76" x2="290" y2="176" />
+            <line x1="350" y1="76" x2="350" y2="176" />
+            <line x1="390" y1="76" x2="390" y2="176" />
+            <line x1="430" y1="76" x2="430" y2="176" />
+            <line x1="470" y1="76" x2="470" y2="176" />
+          </g>
+
+          {/* ESP8266 Central MCU inside container */}
+          <rect
+            x="292"
+            y="102"
+            width="56"
+            height="48"
+            rx="5"
+            fill="rgba(6, 182, 212, 0.08)"
+            stroke="#06b6d4"
+            strokeWidth="1.5"
+          />
+          <text
+            x="320"
+            y="130"
+            textAnchor="middle"
+            fill="#06b6d4"
+            fontSize="9"
+            fontWeight="700"
+            letterSpacing="0.08em"
+          >
+            ESP8266
+          </text>
+
+          {/* Sensor nodes */}
+          <g>
+            {/* Flame sensor */}
+            <circle cx="190" cy="115" r="13" fill="rgba(244, 63, 94, 0.12)" stroke="#f43f5e" strokeWidth="1.5" />
+            <circle cx="190" cy="115" r="4" fill="#f43f5e" />
+            <text x="190" y="165" textAnchor="middle" fill="#f43f5e" fontSize="8" fontWeight="700">
+              FLAME SENSOR
+            </text>
+            <path d="M203 115 L292 122" stroke="#f43f5e" strokeWidth="1" strokeOpacity="0.4" strokeDasharray="3 3" />
+
+            {/* Temperature sensor */}
+            <circle cx="450" cy="115" r="13" fill="rgba(245, 158, 11, 0.12)" stroke="#f59e0b" strokeWidth="1.5" />
+            <circle cx="450" cy="115" r="4" fill="#f59e0b" />
+            <text x="450" y="165" textAnchor="middle" fill="#f59e0b" fontSize="8" fontWeight="700">
+              TEMP SENSOR
+            </text>
+            <path d="M437 115 L348 122" stroke="#f59e0b" strokeWidth="1" strokeOpacity="0.4" strokeDasharray="3 3" />
+          </g>
+
+          {/* Wireless signal radiating from ESP8266 upwards */}
+          <g stroke="#06b6d4" fill="none" strokeWidth="1.5" strokeLinecap="round">
+            <path d="M308 86 A18 18 0 0 1 332 86" strokeOpacity="0.9" />
+            <path d="M296 74 A34 34 0 0 1 344 74" strokeOpacity="0.6" />
+            <path d="M284 62 A52 52 0 0 1 356 62" strokeOpacity="0.35" />
+          </g>
+
+          {/* Telegram cloud alert dispatch */}
+          <g>
+            <rect
+              x="256"
+              y="20"
+              width="128"
+              height="28"
+              rx="14"
+              fill="rgba(6, 182, 212, 0.14)"
+              stroke="#06b6d4"
+              strokeWidth="1.2"
+            />
+            <text
+              x="320"
+              y="38"
+              textAnchor="middle"
+              fill="#06b6d4"
+              fontSize="9"
+              fontWeight="700"
+              letterSpacing="0.06em"
+            >
+              TELEGRAM API · SMS
+            </text>
+          </g>
+
+          <text className="pv__tag" x="24" y="34">
+            IOT · CONTAINER FIRE DETECTION
+          </text>
+        </svg>
+      )}
+
+      {index === '02' && (
+        <svg viewBox="0 0 640 200" preserveAspectRatio="xMidYMid slice" role="presentation">
           {/* traffic waveform */}
           <path
             className="pv__wave pv__wave--soft"
@@ -47,7 +153,7 @@ export function ProjectVisual({ index, title }: { index: string; title: string }
         </svg>
       )}
 
-      {index === '02' && (
+      {index === '03' && (
         <svg viewBox="0 0 640 200" preserveAspectRatio="xMidYMid slice" role="presentation">
           {/* shield */}
           <path
@@ -77,7 +183,7 @@ export function ProjectVisual({ index, title }: { index: string; title: string }
         </svg>
       )}
 
-      {index === '03' && (
+      {index === '04' && (
         <svg viewBox="0 0 640 200" preserveAspectRatio="xMidYMid slice" role="presentation">
           {/* broadcast tower */}
           <g className="pv__tower">

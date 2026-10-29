@@ -87,6 +87,11 @@ export default function CvPage() {
                 {entry.note ? ` · ${entry.note}` : ''}
               </p>
               {entry.result && <p className="cv__areas">{entry.result}</p>}
+              {entry.thesis && (
+                <p className="cv__areas" style={{ marginTop: '0.35rem' }}>
+                  <strong>Thesis:</strong> {entry.thesis.title} (IoT, ESP8266, Wireless Sensors, Telegram API)
+                </p>
+              )}
             </article>
           ))}
         </section>

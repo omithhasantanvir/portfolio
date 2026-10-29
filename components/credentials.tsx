@@ -138,6 +138,26 @@ export function Credentials() {
                           </div>
                         )}
                       </dl>
+
+                      {entry.thesis && (
+                        <div className="edu__thesis">
+                          <div className="edu__thesis-header">
+                            <span className="edu__thesis-badge">B.Sc. Thesis</span>
+                            <h4 className="edu__thesis-title">{entry.thesis.title}</h4>
+                          </div>
+                          <div className="edu__thesis-body">
+                            <p className="edu__thesis-label">Abstract</p>
+                            <p className="edu__thesis-abstract">{entry.thesis.abstract}</p>
+                          </div>
+                          <div className="edu__thesis-footer">
+                            <ul className="chips chips--tech" aria-label="Thesis technologies">
+                              {entry.thesis.technologies.map((tech) => (
+                                <li key={tech}>{tech}</li>
+                              ))}
+                            </ul>
+                          </div>
+                        </div>
+                      )}
                     </div>
                   </article>
                 </Reveal>
