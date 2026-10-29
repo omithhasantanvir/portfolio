@@ -1,97 +1,124 @@
 import Image from 'next/image';
-import { ArrowRight, Award, Download, Github, Linkedin, Mail, MapPin, ShieldCheck } from 'lucide-react';
+import {
+  ArrowRight,
+  Award,
+  BookOpen,
+  Download,
+  ExternalLink,
+  Github,
+  Linkedin,
+  Mail,
+  MapPin,
+  Radio,
+  ShieldCheck,
+  Sparkles,
+} from 'lucide-react';
 
 import { site } from '@/lib/site';
 
-/** Hero: personal portrait, verified badge highlights, headline and primary actions. */
+/** Hero Bento Grid: personal identity, portrait, verified credentials & quick stats. */
 export function Hero() {
   return (
     <section className="hero" id="top">
-      <div className="container hero__inner">
-        <div className="hero__copy">
-          <div className="hero__status">
-            <span className="hero__status-badge">
-              <span className="hero__status-dot" aria-hidden="true" />
-              {site.availability}
-            </span>
-            <span className="hero__location">
-              <MapPin size={13} aria-hidden="true" />
-              {site.location}
-            </span>
-          </div>
+      <div className="container">
+        <div className="bento-hero">
+          {/* Main Introduction Bento Card */}
+          <div className="bento-card bento-card--hero-main">
+            <div className="bento-card__badge-row">
+              <span className="status-pill">
+                <span className="status-pill__dot" aria-hidden="true" />
+                {site.availability}
+              </span>
+              <span className="location-pill">
+                <MapPin size={13} aria-hidden="true" />
+                {site.location}
+              </span>
+            </div>
 
-          <p className="hero__role">{site.role}</p>
+            <div className="hero-intro-group">
+              <p className="hero-eyebrow">
+                <Sparkles size={14} className="hero-eyebrow__icon" aria-hidden="true" />
+                {site.role}
+              </p>
+              <h1 className="hero-title">
+                Hi, I&apos;m <span className="gradient-text">{site.name}</span>
+              </h1>
+              <p className="hero-tagline">{site.positioning}</p>
+              <p className="hero-bio">{site.intro}</p>
+            </div>
 
-          <h1 className="hero__name">
-            Hi, I&apos;m <span className="hero__name-accent">{site.name}</span>
-          </h1>
+            <div className="hero-actions-row">
+              <a className="btn btn--primary" href="#experience">
+                View Experience
+                <ArrowRight size={15} aria-hidden="true" />
+              </a>
+              <a className="btn btn--outline" href="#contact">
+                Let&apos;s Connect
+              </a>
+              <a className="btn btn--ghost" href={site.cv} download="Omith-Hasan-Resume.pdf">
+                <Download size={15} aria-hidden="true" />
+                Resume
+              </a>
+            </div>
 
-          <p className="hero__positioning">{site.positioning}</p>
-          <p className="hero__intro">{site.intro}</p>
-
-          <div className="hero__actions">
-            <a className="btn btn--primary" href="#experience">
-              View Experience
-              <ArrowRight size={15} aria-hidden="true" />
-            </a>
-            <a className="btn btn--outline" href="#contact">
-              Let&apos;s Connect
-            </a>
-            <a className="btn btn--ghost" href={site.cv} download="Omith-Hasan-Resume.pdf">
-              <Download size={15} aria-hidden="true" />
-              Download CV
-            </a>
-          </div>
-
-          <ul className="hero__links" aria-label="Social and professional links">
-            <li>
-              <a href={site.socials.github} target="_blank" rel="noreferrer" title="GitHub">
-                <Github size={16} aria-hidden="true" />
+            <div className="hero-socials-row">
+              <a
+                className="social-pill"
+                href={site.socials.github}
+                target="_blank"
+                rel="noreferrer"
+                title="GitHub"
+              >
+                <Github size={15} aria-hidden="true" />
                 <span>GitHub</span>
               </a>
-            </li>
-            <li>
-              <a href={site.socials.linkedin} target="_blank" rel="noreferrer" title="LinkedIn">
-                <Linkedin size={16} aria-hidden="true" />
+              <a
+                className="social-pill"
+                href={site.socials.linkedin}
+                target="_blank"
+                rel="noreferrer"
+                title="LinkedIn"
+              >
+                <Linkedin size={15} aria-hidden="true" />
                 <span>LinkedIn</span>
               </a>
-            </li>
-            <li>
-              <a href={site.socials.credly} target="_blank" rel="noreferrer" title="Credly Badges">
-                <Award size={16} aria-hidden="true" />
+              <a
+                className="social-pill social-pill--credly"
+                href={site.socials.credly}
+                target="_blank"
+                rel="noreferrer"
+                title="Credly Profile"
+              >
+                <Award size={15} aria-hidden="true" />
                 <span>Credly (5 Badges)</span>
               </a>
-            </li>
-            <li>
-              <a href={`mailto:${site.email}`} title="Email">
-                <Mail size={16} aria-hidden="true" />
+              <a className="social-pill" href={`mailto:${site.email}`} title="Email">
+                <Mail size={15} aria-hidden="true" />
                 <span>Email</span>
               </a>
-            </li>
-          </ul>
-        </div>
+            </div>
+          </div>
 
-        <div className="hero__visual">
-          <div className="hero-portrait">
-            <div className="hero-portrait__glow" aria-hidden="true" />
-            <div className="hero-portrait__frame">
+          {/* Portrait Bento Card */}
+          <div className="bento-card bento-card--hero-portrait">
+            <div className="portrait-wrapper">
               <Image
                 src="/images/omith-hasan-portrait.jpg"
-                alt="Portrait of Omith Hasan — IT & Network Engineer"
+                alt="Omith Hasan — IT & Network Engineer"
                 width={520}
                 height={620}
-                className="hero-portrait__img"
                 priority
+                className="portrait-img"
               />
-              <div className="hero-portrait__overlay" />
+              <div className="portrait-glass-overlay" />
 
               {/* Floating verified badge tag */}
               <a
                 href="#education"
-                className="hero-portrait__tag hero-portrait__tag--top"
+                className="floating-badge floating-badge--top"
                 title="View Credly Badges"
               >
-                <ShieldCheck size={16} className="hero-portrait__tag-icon" aria-hidden="true" />
+                <ShieldCheck size={16} className="floating-badge__icon" aria-hidden="true" />
                 <div>
                   <strong>5 Digital Badges</strong>
                   <span>Cisco &amp; Red Hat Verified</span>
@@ -99,13 +126,63 @@ export function Hero() {
               </a>
 
               {/* Floating credentials pill */}
-              <div className="hero-portrait__tag hero-portrait__tag--bottom">
-                <Award size={16} className="hero-portrait__tag-icon" aria-hidden="true" />
+              <div className="floating-badge floating-badge--bottom">
+                <Award size={16} className="floating-badge__icon" aria-hidden="true" />
                 <div>
                   <strong>CCNA · RHCSA · CEHv12</strong>
                   <span>Networking &amp; Security</span>
                 </div>
               </div>
+            </div>
+          </div>
+
+          {/* Bottom Bento Metric 1: Verified Badges */}
+          <div className="bento-card bento-card--metric">
+            <div className="metric-icon metric-icon--cyan">
+              <ShieldCheck size={20} aria-hidden="true" />
+            </div>
+            <div className="metric-body">
+              <div className="metric-value">5 Verified Badges</div>
+              <div className="metric-label">Credly Digital Credentials</div>
+              <a href="#education" className="metric-link">
+                View Badges <ArrowRight size={12} aria-hidden="true" />
+              </a>
+            </div>
+          </div>
+
+          {/* Bottom Bento Metric 2: Academic Foundation */}
+          <div className="bento-card bento-card--metric">
+            <div className="metric-icon metric-icon--indigo">
+              <BookOpen size={20} aria-hidden="true" />
+            </div>
+            <div className="metric-body">
+              <div className="metric-value">B.Sc. Engineering</div>
+              <div className="metric-label">Computer Engineering · IUBAT</div>
+              <span className="metric-meta">Faculty of Engineering</span>
+            </div>
+          </div>
+
+          {/* Bottom Bento Metric 3: Core Disciplines */}
+          <div className="bento-card bento-card--metric">
+            <div className="metric-icon metric-icon--violet">
+              <Award size={20} aria-hidden="true" />
+            </div>
+            <div className="metric-body">
+              <div className="metric-value">4 Specializations</div>
+              <div className="metric-label">Core Technical Stack</div>
+              <span className="metric-meta">Network · Security · Linux · AD</span>
+            </div>
+          </div>
+
+          {/* Bottom Bento Metric 4: Broadcast IT */}
+          <div className="bento-card bento-card--metric">
+            <div className="metric-icon metric-icon--emerald">
+              <Radio size={20} aria-hidden="true" />
+            </div>
+            <div className="metric-body">
+              <div className="metric-value">24/7 Operations</div>
+              <div className="metric-label">Broadcast IT &amp; NOC</div>
+              <span className="metric-meta">Zero-Downtime Reliability</span>
             </div>
           </div>
         </div>

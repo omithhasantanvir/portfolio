@@ -18,11 +18,85 @@ export function Credentials() {
       <div className="container">
         <Reveal>
           <div className="section-head">
-            <p className="label">06 / Education &amp; Credentials</p>
-            <h2>Education &amp; verified badges</h2>
+            <p className="label">02 / Verified Credentials</p>
+            <h2>Certifications &amp; Digital Badges</h2>
             <p className="section-head__note">
-              Academic foundation alongside 5 verified digital credentials from Cisco and Red Hat.
+              5 official credentials earned through Cisco Networking Academy &amp; Red Hat Academy, verified on Credly.
             </p>
+          </div>
+        </Reveal>
+
+        {/* Verified Credly Digital Badges Showcase */}
+        <div className="credly-section">
+          <Reveal>
+            <div className="credly-section__header">
+              <div className="credly-section__header-left">
+                <span className="label">Credly Verified</span>
+                <h3 className="credly-section__title">Official Digital Credentials</h3>
+                <p className="credly-section__desc">
+                  3 Cisco CCNA modules and 2 Red Hat RHCSA modules, with direct public verification links.
+                </p>
+              </div>
+              <a
+                className="btn btn--outline btn--sm"
+                href={site.socials.credly}
+                target="_blank"
+                rel="noreferrer"
+              >
+                <Award size={14} aria-hidden="true" />
+                View Credly Profile
+                <ExternalLink size={13} aria-hidden="true" />
+              </a>
+            </div>
+          </Reveal>
+
+          <div className="badges-grid">
+            {credlyBadges.map((badge, index) => (
+              <Reveal delay={index * 50} key={badge.id}>
+                <article className="badge-card">
+                  <div className="badge-card__top">
+                    <div className="badge-card__emblem">
+                      <Image
+                        src={badge.image}
+                        alt={`${badge.title} badge`}
+                        width={48}
+                        height={48}
+                        className="badge-card__img"
+                      />
+                    </div>
+                    <span className={`badge-card__track badge-card__track--${badge.track.toLowerCase()}`}>
+                      {badge.track}
+                    </span>
+                  </div>
+
+                  <div className="badge-card__content">
+                    <h4 className="badge-card__title">{badge.title}</h4>
+                    <p className="badge-card__issuer">{badge.issuer}</p>
+                    <time className="badge-card__date">{badge.issueDate}</time>
+                  </div>
+
+                  <div className="badge-card__footer">
+                    <a
+                      className="badge-card__verify"
+                      href={badge.url}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      <BadgeCheck size={12} aria-hidden="true" />
+                      Verify
+                      <ExternalLink size={11} aria-hidden="true" />
+                    </a>
+                  </div>
+                </article>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+
+        <Reveal>
+          <div className="section-head" style={{ marginTop: 'clamp(28px, 4vw, 44px)' }}>
+            <p className="label">Academic Background</p>
+            <h2>Education journey</h2>
           </div>
         </Reveal>
 
@@ -71,73 +145,6 @@ export function Credentials() {
             );
           })}
         </ol>
-
-        {/* Verified Credly Digital Badges Showcase */}
-        <div className="credly-section">
-          <Reveal>
-            <div className="credly-section__header">
-              <div className="credly-section__header-left">
-                <span className="label">Digital Credentials</span>
-                <h3 className="credly-section__title">Verified Credly Badges</h3>
-                <p className="credly-section__desc">
-                  5 official badges earned through Cisco Networking Academy (3 CCNA modules) and Red Hat Academy (2 RHCSA modules), verifiable directly on Credly.
-                </p>
-              </div>
-              <a
-                className="btn btn--outline btn--sm"
-                href={site.socials.credly}
-                target="_blank"
-                rel="noreferrer"
-              >
-                <Award size={14} aria-hidden="true" />
-                View Credly Profile
-                <ExternalLink size={13} aria-hidden="true" />
-              </a>
-            </div>
-          </Reveal>
-
-          <div className="badges-grid">
-            {credlyBadges.map((badge, index) => (
-              <Reveal delay={index * 60} key={badge.id}>
-                <article className="badge-card">
-                  <div className="badge-card__top">
-                    <div className="badge-card__emblem">
-                      <Image
-                        src={badge.image}
-                        alt={`${badge.title} badge`}
-                        width={48}
-                        height={48}
-                        className="badge-card__img"
-                      />
-                    </div>
-                    <span className={`badge-card__track badge-card__track--${badge.track.toLowerCase()}`}>
-                      {badge.track}
-                    </span>
-                  </div>
-
-                  <div className="badge-card__content">
-                    <h4 className="badge-card__title">{badge.title}</h4>
-                    <p className="badge-card__issuer">{badge.issuer}</p>
-                    <time className="badge-card__date">{badge.issueDate}</time>
-                  </div>
-
-                  <div className="badge-card__footer">
-                    <a
-                      className="badge-card__verify"
-                      href={badge.url}
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      <BadgeCheck size={12} aria-hidden="true" />
-                      Verify
-                      <ExternalLink size={11} aria-hidden="true" />
-                    </a>
-                  </div>
-                </article>
-              </Reveal>
-            ))}
-          </div>
-        </div>
 
         <div className="credentials">
           <Reveal className="credentials__main">
