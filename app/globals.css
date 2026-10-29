@@ -1900,7 +1900,7 @@ main[id] {
   display: flex;
   flex-direction: column;
   height: 100%;
-  padding: 14px;
+  padding: 12px;
   border: 1px solid var(--line);
   border-radius: var(--radius);
   background: var(--bg-soft);
@@ -1918,17 +1918,16 @@ main[id] {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  gap: 10px;
+  gap: 8px;
   margin-bottom: 10px;
 }
 
 .badge-card__emblem {
-  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 48px;
-  height: 48px;
+  width: 44px;
+  height: 44px;
   flex-shrink: 0;
   padding: 4px;
   border-radius: var(--radius-sm);
@@ -1940,13 +1939,6 @@ main[id] {
   width: 100%;
   height: 100%;
   object-fit: contain;
-}
-
-.badge-card__meta {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 5px;
 }
 
 .badge-card__track {
@@ -1979,79 +1971,54 @@ main[id] {
   border-color: rgba(204, 0, 0, 0.3);
 }
 
-.badge-card__date {
-  font-family: var(--font-mono);
-  font-size: 0.59375rem;
-  color: var(--muted-2);
-}
-
 .badge-card__content {
   display: flex;
   flex-direction: column;
   flex-grow: 1;
+  gap: 3px;
 }
 
 .badge-card__title {
-  font-size: 0.875rem;
+  font-size: 0.78rem;
   font-weight: 600;
   line-height: 1.3;
   letter-spacing: -0.01em;
-  margin: 0 0 3px 0;
+  margin: 0;
 }
 
 .badge-card__issuer {
   font-family: var(--font-mono);
-  font-size: 0.59375rem;
+  font-size: 0.5625rem;
   letter-spacing: 0.04em;
   color: var(--muted);
-  margin-bottom: 8px;
+  margin: 0;
 }
 
-.badge-card__summary {
-  font-size: 0.75rem;
-  line-height: 1.5;
-  color: var(--text-2);
-  margin-bottom: 10px;
-}
-
-.badge-card__skills {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 4px;
-  margin-top: auto;
-  margin-bottom: 10px;
-}
-
-.badge-skill {
-  display: inline-block;
-  padding: 1px 6px;
+.badge-card__date {
   font-family: var(--font-mono);
   font-size: 0.5625rem;
-  border-radius: var(--radius-sm);
-  background: var(--panel);
-  border: 1px solid var(--line);
-  color: var(--muted);
+  color: var(--muted-2);
 }
 
 .badge-card__footer {
-  padding-top: 10px;
+  padding-top: 8px;
+  margin-top: 8px;
   border-top: 1px solid var(--line);
 }
 
 .badge-card__verify {
   display: inline-flex;
   align-items: center;
-  gap: 5px;
+  gap: 4px;
   font-family: var(--font-mono);
-  font-size: 0.6875rem;
+  font-size: 0.625rem;
   font-weight: 500;
   color: var(--accent);
-  transition: color 0.2s var(--ease), gap 0.2s var(--ease);
+  transition: color 0.2s var(--ease);
 }
 
 .badge-card__verify:hover {
   color: var(--accent-2);
-  gap: 7px;
   text-decoration: underline;
 }
 

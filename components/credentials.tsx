@@ -105,31 +105,20 @@ export function Credentials() {
                       <Image
                         src={badge.image}
                         alt={`${badge.title} badge`}
-                        width={72}
-                        height={72}
+                        width={48}
+                        height={48}
                         className="badge-card__img"
                       />
                     </div>
-                    <div className="badge-card__meta">
-                      <span className={`badge-card__track badge-card__track--${badge.track.toLowerCase()}`}>
-                        {badge.track}
-                      </span>
-                      <time className="badge-card__date">{badge.issueDate}</time>
-                    </div>
+                    <span className={`badge-card__track badge-card__track--${badge.track.toLowerCase()}`}>
+                      {badge.track}
+                    </span>
                   </div>
 
                   <div className="badge-card__content">
                     <h4 className="badge-card__title">{badge.title}</h4>
                     <p className="badge-card__issuer">{badge.issuer}</p>
-                    <p className="badge-card__summary">{badge.summary}</p>
-
-                    <div className="badge-card__skills">
-                      {badge.skills.map((skill) => (
-                        <span className="badge-skill" key={skill}>
-                          {skill}
-                        </span>
-                      ))}
-                    </div>
+                    <time className="badge-card__date">{badge.issueDate}</time>
                   </div>
 
                   <div className="badge-card__footer">
@@ -139,9 +128,9 @@ export function Credentials() {
                       target="_blank"
                       rel="noreferrer"
                     >
-                      <BadgeCheck size={14} aria-hidden="true" />
-                      Verify on Credly
-                      <ExternalLink size={12} aria-hidden="true" />
+                      <BadgeCheck size={12} aria-hidden="true" />
+                      Verify
+                      <ExternalLink size={11} aria-hidden="true" />
                     </a>
                   </div>
                 </article>
