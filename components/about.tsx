@@ -5,7 +5,7 @@ import { Reveal } from '@/components/reveal';
 import { site } from '@/lib/site';
 
 const facts = [
-  { label: 'Role', value: site.role },
+  { label: 'Role', value: 'System Administration' },
   { label: 'Location', value: site.location },
   { label: 'Education', value: 'B.Sc. Computer Engineering (IUBAT)' },
   { label: 'Availability', value: site.availability },
