@@ -16,6 +16,12 @@ export interface EducationEntry {
     abstract: string;
     technologies: string[];
   };
+  practicum?: {
+    title: string;
+    organization: string;
+    features: string[];
+    technologies: string[];
+  };
 }
 
 /** Complete academic journey, oldest first. */
@@ -62,6 +68,28 @@ export const educationJourney: EducationEntry[] = [
         'Flame & Heat Sensors',
         'Embedded C/C++',
         'Hardware Prototyping',
+      ],
+    },
+    practicum: {
+      title: 'Network Management of IP Link Network',
+      organization: 'IP Link Network',
+      features: [
+        'Implementation of a VPN suggested to enable secure one-to-one communication with resellers',
+        'Two core routers deployed instead of a single core switch for full network redundancy',
+        'Open Shortest Path First (OSPF) configured as the dynamic routing protocol',
+        'SSH security implemented for encrypted and authenticated remote administration access',
+        'Dedicated FTP server added for high-speed local client service and file exchange',
+        'Centralized DHCP server deployed for automated, conflict-free IP address allocation',
+        'Optical access layer modernization: Deployed GPON instead of EPON in the OLT',
+      ],
+      technologies: [
+        'Dual Core Redundancy',
+        'OSPF Routing',
+        'GPON / OLT',
+        'Site-to-Site VPN',
+        'SSH Security',
+        'DHCP Server',
+        'FTP Services',
       ],
     },
   },

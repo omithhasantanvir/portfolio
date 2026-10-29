@@ -26,6 +26,22 @@ export function Experience() {
                     <h3>{job.role}</h3>
                     <p className="job__company">{job.company}</p>
                     <p className="job__description">{job.description}</p>
+
+                    {job.practicum && (
+                      <div className="job__practicum">
+                        <div className="job__practicum-head">
+                          <span className="badge">Practicum Project</span>
+                          <h4>{job.practicum.title}</h4>
+                        </div>
+                        <p className="job__practicum-label">Proposed Network Features:</p>
+                        <ul className="job__practicum-list">
+                          {job.practicum.features.map((feat, i) => (
+                            <li key={i}>{feat}</li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
+
                     <ul className="chips" aria-label={`Areas involved at ${job.company}`}>
                       {job.areas.map((area) => (
                         <li key={area}>{area}</li>

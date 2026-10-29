@@ -6,6 +6,10 @@ export type ExperienceItem = {
   description: string;
   /** Areas involved — drawn from the expertise Omith has published. */
   areas: string[];
+  practicum?: {
+    title: string;
+    features: string[];
+  };
 };
 
 /** Professional experience — descriptions are the real published ones. */
@@ -32,8 +36,21 @@ export const experience: ExperienceItem[] = [
     index: '03',
     role: 'Network Intern',
     company: 'IP Link Network',
-    period: 'Internship',
-    description: 'Gained practical exposure to networking operations and real-world IT infrastructure.',
-    areas: ['Networking operations', 'IT infrastructure'],
+    period: 'Internship / Practicum',
+    description:
+      'Gained hands-on exposure to ISP networking operations, core routing topologies, and fiber access infrastructure while researching and developing the undergraduate engineering practicum project.',
+    areas: ['ISP Networking', 'Dual Core Redundancy', 'OSPF Routing', 'GPON / OLT', 'VPN Tunnels', 'SSH Security'],
+    practicum: {
+      title: 'Network Management of IP Link Network',
+      features: [
+        'Implementation of a VPN suggested to enable one-to-one communication with the reseller',
+        'Two core router has been added instead of one core switch',
+        'Open Shortest Path Fast (OSPF) is used as the routing protocol',
+        'For the remote access SSH security is suggested',
+        'FTP has been added for better client service',
+        'DHCP server has been suggested',
+        'Used GPON instead of EPON in OLT',
+      ],
+    },
   },
 ];

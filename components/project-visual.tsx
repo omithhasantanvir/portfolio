@@ -114,41 +114,202 @@ export function ProjectVisual({ index, title }: { index: string; title: string }
 
       {index === '02' && (
         <svg viewBox="0 0 640 200" preserveAspectRatio="xMidYMid slice" role="presentation">
-          {/* traffic waveform */}
-          <path
-            className="pv__wave pv__wave--soft"
-            d="M0 120 C 60 90, 110 150, 170 118 S 290 70, 350 112 S 470 160, 530 104 S 600 90, 640 112"
-          />
-          <path
-            className="pv__wave"
-            d="M0 132 C 70 100, 120 162, 190 128 S 300 82, 370 122 S 480 168, 545 114 S 605 102, 640 124"
-          />
-          {/* nodes */}
-          <g className="pv__nodes">
-            <circle cx="90" cy="78" r="14" />
-            <circle cx="320" cy="60" r="18" />
-            <circle cx="550" cy="72" r="14" />
-            <circle cx="200" cy="140" r="10" />
-            <circle cx="445" cy="142" r="10" />
+          {/* Dual Redundant Core Routers */}
+          <g>
+            {/* Core Router 1 */}
+            <rect
+              x="220"
+              y="74"
+              width="90"
+              height="44"
+              rx="6"
+              fill="rgba(6, 182, 212, 0.1)"
+              stroke="#06b6d4"
+              strokeWidth="1.5"
+            />
+            <text
+              x="265"
+              y="96"
+              textAnchor="middle"
+              fill="#06b6d4"
+              fontSize="8.5"
+              fontWeight="700"
+              letterSpacing="0.04em"
+            >
+              CORE ROUTER 1
+            </text>
+            <text
+              x="265"
+              y="108"
+              textAnchor="middle"
+              fill="currentColor"
+              opacity="0.6"
+              fontSize="7.5"
+              fontWeight="600"
+            >
+              Active / OSPF
+            </text>
+
+            {/* Core Router 2 */}
+            <rect
+              x="330"
+              y="74"
+              width="90"
+              height="44"
+              rx="6"
+              fill="rgba(6, 182, 212, 0.1)"
+              stroke="#06b6d4"
+              strokeWidth="1.5"
+            />
+            <text
+              x="375"
+              y="96"
+              textAnchor="middle"
+              fill="#06b6d4"
+              fontSize="8.5"
+              fontWeight="700"
+              letterSpacing="0.04em"
+            >
+              CORE ROUTER 2
+            </text>
+            <text
+              x="375"
+              y="108"
+              textAnchor="middle"
+              fill="currentColor"
+              opacity="0.6"
+              fontSize="7.5"
+              fontWeight="600"
+            >
+              Redundant / OSPF
+            </text>
+
+            {/* OSPF Trunk Interconnect */}
+            <line x1="310" y1="96" x2="330" y2="96" stroke="#06b6d4" strokeWidth="2" strokeDasharray="3 2" />
+            <rect x="304" y="86" width="32" height="20" rx="3" fill="var(--bg, #0a0f1d)" stroke="#06b6d4" strokeWidth="1" />
+            <text x="320" y="99" textAnchor="middle" fill="#06b6d4" fontSize="6.5" fontWeight="800">OSPF</text>
           </g>
-          <g className="pv__links">
-            <path d="M90 78 L200 140 L320 60 L445 142 L550 72" />
+
+          {/* GPON OLT on the left */}
+          <g>
+            <rect
+              x="50"
+              y="74"
+              width="110"
+              height="44"
+              rx="6"
+              fill="rgba(16, 185, 129, 0.1)"
+              stroke="#10b981"
+              strokeWidth="1.4"
+            />
+            <text
+              x="105"
+              y="95"
+              textAnchor="middle"
+              fill="#10b981"
+              fontSize="8.5"
+              fontWeight="700"
+              letterSpacing="0.04em"
+            >
+              GPON OLT
+            </text>
+            <text
+              x="105"
+              y="107"
+              textAnchor="middle"
+              fill="currentColor"
+              opacity="0.6"
+              fontSize="7"
+            >
+              (Replaced EPON)
+            </text>
+
+            {/* Redundant uplinks to both core routers */}
+            <path d="M160 88 L220 88" stroke="#10b981" strokeWidth="1.5" />
+            <path d="M160 104 L220 130 L330 110" stroke="#10b981" strokeWidth="1.2" strokeDasharray="3 2" strokeOpacity="0.7" />
+
+            {/* Fiber distribution lines */}
+            <line x1="75" y1="118" x2="60" y2="155" stroke="#10b981" strokeWidth="1" strokeOpacity="0.4" />
+            <line x1="105" y1="118" x2="105" y2="155" stroke="#10b981" strokeWidth="1" strokeOpacity="0.4" />
+            <line x1="135" y1="118" x2="150" y2="155" stroke="#10b981" strokeWidth="1" strokeOpacity="0.4" />
+            <text x="105" y="167" textAnchor="middle" fill="#10b981" fontSize="7" fontWeight="600">
+              FTTH SUBSCRIBERS
+            </text>
           </g>
-          {/* packets */}
-          <circle className="pv__packet pv__p1" cx="0" cy="0" r="3.5" />
-          <circle className="pv__packet pv__p2" cx="0" cy="0" r="3.5" />
-          <circle className="pv__packet pv__p3" cx="0" cy="0" r="3.5" />
-          {/* bars */}
-          <g className="pv__bars">
-            <rect x="120" y="150" width="10" height="26" rx="2" />
-            <rect x="136" y="142" width="10" height="34" rx="2" />
-            <rect x="152" y="156" width="10" height="20" rx="2" />
-            <rect x="470" y="148" width="10" height="28" rx="2" />
-            <rect x="486" y="140" width="10" height="36" rx="2" />
-            <rect x="502" y="156" width="10" height="20" rx="2" />
+
+          {/* Reseller VPN & Central Services on the right */}
+          <g>
+            {/* VPN Reseller Box */}
+            <rect
+              x="475"
+              y="52"
+              width="120"
+              height="38"
+              rx="6"
+              fill="rgba(168, 85, 247, 0.1)"
+              stroke="#a855f7"
+              strokeWidth="1.4"
+            />
+            <text
+              x="535"
+              y="71"
+              textAnchor="middle"
+              fill="#a855f7"
+              fontSize="8"
+              fontWeight="700"
+              letterSpacing="0.04em"
+            >
+              RESELLER VPN
+            </text>
+            <text
+              x="535"
+              y="82"
+              textAnchor="middle"
+              fill="currentColor"
+              opacity="0.6"
+              fontSize="6.5"
+            >
+              1-to-1 Secure Tunnel
+            </text>
+            <path d="M420 86 L475 71" stroke="#a855f7" strokeWidth="1.2" strokeDasharray="3 2" />
+
+            {/* Central Services (DHCP / FTP / SSH) */}
+            <rect
+              x="475"
+              y="102"
+              width="120"
+              height="40"
+              rx="6"
+              fill="rgba(59, 130, 246, 0.1)"
+              stroke="#3b82f6"
+              strokeWidth="1.4"
+            />
+            <text
+              x="535"
+              y="120"
+              textAnchor="middle"
+              fill="#3b82f6"
+              fontSize="8"
+              fontWeight="700"
+              letterSpacing="0.04em"
+            >
+              DHCP · FTP · SSH
+            </text>
+            <text
+              x="535"
+              y="133"
+              textAnchor="middle"
+              fill="currentColor"
+              opacity="0.6"
+              fontSize="6.5"
+            >
+              Encrypted Admin &amp; File
+            </text>
+            <path d="M420 106 L475 120" stroke="#3b82f6" strokeWidth="1.2" />
           </g>
+
           <text className="pv__tag" x="24" y="34">
-            TRAFFIC · {title}
+            ISP INFRASTRUCTURE · DUAL CORE OSPF · GPON · VPN
           </text>
         </svg>
       )}

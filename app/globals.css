@@ -1530,6 +1530,68 @@ main[id] {
   color: var(--muted);
 }
 
+.job__practicum {
+  margin-top: 14px;
+  padding: 14px 16px;
+  border-radius: var(--radius-sm);
+  background: rgba(6, 182, 212, 0.04);
+  border: 1px solid rgba(6, 182, 212, 0.2);
+  display: grid;
+  gap: 8px;
+}
+
+[data-theme='light'] .job__practicum {
+  background: rgba(2, 132, 199, 0.04);
+  border-color: rgba(2, 132, 199, 0.2);
+}
+
+.job__practicum-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.job__practicum-head h4 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: -0.01em;
+}
+
+.job__practicum-label {
+  font-family: var(--font-mono);
+  font-size: 0.625rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+  font-weight: 700;
+  margin-top: 4px;
+}
+
+.job__practicum-list {
+  display: grid;
+  gap: 5px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.job__practicum-list li {
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  color: var(--text-2);
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.job__practicum-list li::before {
+  content: "•";
+  color: var(--accent);
+  font-weight: bold;
+}
+
 .chips {
   display: flex;
   flex-wrap: wrap;
@@ -2210,6 +2272,72 @@ main[id] {
 
 .edu__thesis-footer {
   margin-top: 4px;
+}
+
+.edu__practicum {
+  border-color: rgba(16, 185, 129, 0.28);
+  background: rgba(16, 185, 129, 0.04);
+}
+
+[data-theme='light'] .edu__practicum {
+  border-color: rgba(5, 150, 105, 0.25);
+  background: rgba(5, 150, 105, 0.04);
+}
+
+.edu__practicum .edu__thesis-body {
+  border-left-color: #10b981;
+}
+
+[data-theme='light'] .edu__practicum .edu__thesis-body {
+  border-left-color: #059669;
+}
+
+.edu__practicum-badge {
+  background: rgba(16, 185, 129, 0.14);
+  color: #10b981;
+  border-color: rgba(16, 185, 129, 0.32);
+}
+
+[data-theme='light'] .edu__practicum-badge {
+  background: rgba(5, 150, 105, 0.12);
+  color: #059669;
+  border-color: rgba(5, 150, 105, 0.3);
+}
+
+.edu__practicum-org {
+  font-size: 0.8125rem;
+  color: var(--muted);
+}
+
+.edu__practicum-org strong {
+  color: var(--text);
+}
+
+.edu__feature-list {
+  display: grid;
+  gap: 6px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.edu__feature-list li {
+  font-size: 0.85rem;
+  line-height: 1.55;
+  color: var(--text-2);
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.edu__feature-list li::before {
+  content: "•";
+  color: #10b981;
+  font-weight: bold;
+}
+
+[data-theme='light'] .edu__feature-list li::before {
+  color: #059669;
 }
 
 .degree {

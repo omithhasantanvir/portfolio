@@ -158,6 +158,33 @@ export function Credentials() {
                           </div>
                         </div>
                       )}
+
+                      {entry.practicum && (
+                        <div className="edu__thesis edu__practicum">
+                          <div className="edu__thesis-header">
+                            <span className="edu__thesis-badge edu__practicum-badge">B.Sc. Practicum Project</span>
+                            <h4 className="edu__thesis-title">{entry.practicum.title}</h4>
+                            <p className="edu__practicum-org">
+                              Host Organization: <strong>{entry.practicum.organization}</strong>
+                            </p>
+                          </div>
+                          <div className="edu__thesis-body">
+                            <p className="edu__thesis-label">Proposed Network Features</p>
+                            <ul className="edu__feature-list">
+                              {entry.practicum.features.map((feat, i) => (
+                                <li key={i}>{feat}</li>
+                              ))}
+                            </ul>
+                          </div>
+                          <div className="edu__thesis-footer">
+                            <ul className="chips chips--tech" aria-label="Practicum technologies">
+                              {entry.practicum.technologies.map((tech) => (
+                                <li key={tech}>{tech}</li>
+                              ))}
+                            </ul>
+                          </div>
+                        </div>
+                      )}
                     </div>
                   </article>
                 </Reveal>

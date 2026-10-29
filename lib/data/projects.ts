@@ -16,8 +16,8 @@ export type Project = {
 /**
  * Projects / technical work — case-study style.
  *
- * Thesis project is fully documented with real architecture, problem, solution, role, and outcome.
- * Other operational projects can be documented as measured results become available.
+ * Both the Undergraduate Thesis and the Practicum Project are fully documented
+ * with real architecture, problem, solution, role, and outcome.
  */
 export const projects: Project[] = [
   {
@@ -48,11 +48,30 @@ export const projects: Project[] = [
   },
   {
     index: '02',
-    status: 'in-progress',
-    title: 'Network Monitoring & Traffic Analysis',
+    status: 'documented',
+    title: 'Network Management of IP Link Network',
     summary:
-      'Monitoring and diagnosing network infrastructure through practical traffic analysis and system monitoring.',
-    tech: ['Wireshark', 'Linux', 'Networking'],
+      'Undergraduate B.Sc. Engineering Practicum Project: Comprehensive network infrastructure management and redesign for IP Link Network, featuring dual-core router redundancy, OSPF routing, GPON optical migration, and secure reseller VPN tunnels.',
+    tech: [
+      'Dual Core Routers',
+      'OSPF Routing',
+      'GPON / OLT',
+      'VPN Tunnels',
+      'SSH Security',
+      'DHCP Server',
+      'FTP Services',
+      'ISP Operations',
+    ],
+    problem:
+      'Operating with a single core switch created a severe single point of failure (SPOF) vulnerable to total network outages. In addition, legacy EPON optical architecture limited bandwidth capacity for growing subscribers, static routing lacked dynamic failover, remote access lacked encryption, and reseller communications were not securely isolated.',
+    solution:
+      'Architected and proposed a high-availability ISP infrastructure: replaced the single switch with two redundant core routers running Open Shortest Path First (OSPF), migrated the OLT access layer from EPON to high-speed GPON, implemented site-to-site VPNs for dedicated reseller communications, enforced SSH encryption for remote management, and integrated dedicated DHCP and FTP service servers.',
+    role:
+      'Practicum Network Engineer & System Analyst (IUBAT B.Sc. Practicum Project at IP Link Network). Researched network bottlenecks, drafted the high-availability topology, planned OSPF area design and route distribution, and specified GPON optical deployment parameters.',
+    architecture:
+      'Subscribers / FTTH -> GPON OLT Access -> Layer 2 Distribution -> Dual Redundant Core Routers (OSPF Dynamic Routing & Redundant Uplinks) -> Reseller VPN Gateway + Hardened SSH Remote Access + Centralized DHCP & FTP Servers -> Upstream Transit Provider.',
+    outcome:
+      'Eliminated single-point failure vulnerabilities through automated router failover, expanded subscriber optical bandwidth and split ratios with GPON, secured remote administrative access with SSH, and guaranteed private, encrypted connectivity for reseller partners.',
   },
   {
     index: '03',

@@ -56,6 +56,11 @@ export default function CvPage() {
               <p className="cv__company">{job.company}</p>
               <p>{job.description}</p>
               <p className="cv__areas">{job.areas.join(' · ')}</p>
+              {job.practicum && (
+                <p className="cv__areas" style={{ marginTop: '0.35rem', fontStyle: 'italic' }}>
+                  Practicum Project: {job.practicum.title} (Dual Core OSPF, GPON OLT, Reseller VPN, SSH Security)
+                </p>
+              )}
             </article>
           ))}
         </section>
@@ -90,6 +95,11 @@ export default function CvPage() {
               {entry.thesis && (
                 <p className="cv__areas" style={{ marginTop: '0.35rem' }}>
                   <strong>Thesis:</strong> {entry.thesis.title} (IoT, ESP8266, Wireless Sensors, Telegram API)
+                </p>
+              )}
+              {entry.practicum && (
+                <p className="cv__areas" style={{ marginTop: '0.35rem' }}>
+                  <strong>Practicum Project:</strong> {entry.practicum.title} at {entry.practicum.organization} (Dual Core Redundancy, OSPF, GPON OLT, Reseller VPN, SSH)
                 </p>
               )}
             </article>
