@@ -1892,15 +1892,15 @@ main[id] {
 
 .badges-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
-  gap: 18px;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 12px;
 }
 
 .badge-card {
   display: flex;
   flex-direction: column;
   height: 100%;
-  padding: 22px;
+  padding: 14px;
   border: 1px solid var(--line);
   border-radius: var(--radius);
   background: var(--bg-soft);
@@ -1911,15 +1911,15 @@ main[id] {
 .badge-card:hover {
   border-color: var(--line-2);
   transform: translateY(-2px);
-  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
 .badge-card__top {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  gap: 14px;
-  margin-bottom: 16px;
+  gap: 10px;
+  margin-bottom: 10px;
 }
 
 .badge-card__emblem {
@@ -1927,11 +1927,11 @@ main[id] {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 76px;
-  height: 76px;
+  width: 48px;
+  height: 48px;
   flex-shrink: 0;
-  padding: 6px;
-  border-radius: var(--radius);
+  padding: 4px;
+  border-radius: var(--radius-sm);
   background: var(--ghost-bg);
   border: 1px solid var(--line);
 }
@@ -1946,16 +1946,16 @@ main[id] {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  gap: 6px;
+  gap: 5px;
 }
 
 .badge-card__track {
   display: inline-flex;
   align-items: center;
-  padding: 3px 9px;
+  padding: 2px 7px;
   border-radius: 100px;
   font-family: var(--font-mono);
-  font-size: 0.625rem;
+  font-size: 0.5625rem;
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -1981,7 +1981,7 @@ main[id] {
 
 .badge-card__date {
   font-family: var(--font-mono);
-  font-size: 0.6875rem;
+  font-size: 0.59375rem;
   color: var(--muted-2);
 }
 
@@ -1992,41 +1992,41 @@ main[id] {
 }
 
 .badge-card__title {
-  font-size: 1.05rem;
+  font-size: 0.875rem;
   font-weight: 600;
-  line-height: 1.35;
+  line-height: 1.3;
   letter-spacing: -0.01em;
-  margin: 0 0 4px 0;
+  margin: 0 0 3px 0;
 }
 
 .badge-card__issuer {
   font-family: var(--font-mono);
-  font-size: 0.6875rem;
+  font-size: 0.59375rem;
   letter-spacing: 0.04em;
   color: var(--muted);
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 }
 
 .badge-card__summary {
-  font-size: 0.8125rem;
-  line-height: 1.55;
+  font-size: 0.75rem;
+  line-height: 1.5;
   color: var(--text-2);
-  margin-bottom: 14px;
+  margin-bottom: 10px;
 }
 
 .badge-card__skills {
   display: flex;
   flex-wrap: wrap;
-  gap: 6px;
+  gap: 4px;
   margin-top: auto;
-  margin-bottom: 16px;
+  margin-bottom: 10px;
 }
 
 .badge-skill {
   display: inline-block;
-  padding: 2px 7px;
+  padding: 1px 6px;
   font-family: var(--font-mono);
-  font-size: 0.625rem;
+  font-size: 0.5625rem;
   border-radius: var(--radius-sm);
   background: var(--panel);
   border: 1px solid var(--line);
@@ -2034,16 +2034,16 @@ main[id] {
 }
 
 .badge-card__footer {
-  padding-top: 14px;
+  padding-top: 10px;
   border-top: 1px solid var(--line);
 }
 
 .badge-card__verify {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: 5px;
   font-family: var(--font-mono);
-  font-size: 0.75rem;
+  font-size: 0.6875rem;
   font-weight: 500;
   color: var(--accent);
   transition: color 0.2s var(--ease), gap 0.2s var(--ease);
@@ -2051,7 +2051,7 @@ main[id] {
 
 .badge-card__verify:hover {
   color: var(--accent-2);
-  gap: 8px;
+  gap: 7px;
   text-decoration: underline;
 }
 
