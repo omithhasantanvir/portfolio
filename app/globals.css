@@ -45,7 +45,7 @@
   --radius: 10px;
   --radius-lg: 16px;
 
-  --space-section: clamp(72px, 9vw, 126px);
+  --space-section: clamp(44px, 5.5vw, 72px);
   --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
   --dur: 0.5s;
   --shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
@@ -197,7 +197,7 @@ main[id] {
 
 .section-head {
   max-width: 62ch;
-  margin-bottom: clamp(34px, 5vw, 58px);
+  margin-bottom: clamp(22px, 3vw, 36px);
 }
 
 .section-head .label {
